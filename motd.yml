@@ -1,0 +1,18 @@
+---
+- name: Set motd with hostname and timestamp
+  hosts: your_target_host  # Replace 'your_target_host' with the actual target host or group of hosts
+  become: yes  # Run tasks with elevated privileges
+
+  tasks:
+    - name: Set motd with hostname and timestamp
+      lineinfile:
+        path: /etc/motd
+        line: "{{ 'echo \"Hostname: $(hostname)\" && echo \"Timestamp: $(date)\"' }}"
+        create: yes
+
+      notify:
+        - restart motd
+
+  handlers:
+    - name: restart motd
+      command: /usr/sbin/update-motd

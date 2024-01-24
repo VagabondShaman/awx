@@ -1,0 +1,33 @@
+---
+- name: Create VagabondShaman user
+  hosts: your_target_host  # Replace 'your_target_host' with the actual target host or group of hosts
+
+  tasks:
+    - name: Create VagabondShaman user
+      user:
+        name: VagabondShaman
+        password: "{{ 'ugyseertisenki' | password_hash('sha512', 'mysecretsalt') }}"  # Use a secure method for password hashing
+        shell: /bin/bash
+        createhome: yes
+
+      # Optional: Assign sudo privileges to the user
+      # - name: Add VagabondShaman to sudoers
+      #   lineinfile:
+      #     dest: /etc/sudoers
+      #     line: 'VagabondShaman ALL=(ALL) NOPASSWD: ALL'
+      #     validate: 'visudo -cf %s'
+
+      # Optional: Set up SSH key for the user
+      # - name: Copy SSH key to VagabondShaman's authorized_keys
+      #   authorized_key:
+      #     user: VagabondShaman
+      #     key: "{{ lookup('file', '/path/to/your/ssh/public/key.pub') }}"
+
+      # Optional: Ensure the user is added to a specific group
+      # - name: Add VagabondShaman to a specific group
+      #   user:
+      #     name: VagabondShaman
+      #     groups: your_group_name
+
+      # Optional: Set up additional configurations as needed
+
