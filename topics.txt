@@ -1,0 +1,36 @@
+What is AWX?
+
+User management:
+    Organizations - projects
+    Roles - specify the permissions of team members
+    Teams - admin/dev/audit/readonly/etc
+    Users - assign to projects
+    Even more!: Settings -> authentication types
+
+Configuring a Deployment:
+    Inventory
+        access and options
+        update inventory
+        adding hosts to inventory - toggle function
+    Access to playbooks
+    Authentication for access
+    Template - create one
+    Custom prompts
+
+Deployment on AWX:
+    Logging
+    Rerun function
+    Transpanency compared to current possibilities
+    Webhooks
+
+The dirty stuff:
+    Security
+    Installation - multiple guides available, with clearly stated system requirements and dependencies
+    Networking has to be aligned
+
+
+Use cases:
+Basic ping playbook
+User creation playbook
+Motd modifier playbook
+Setting up recurring jobs
