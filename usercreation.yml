@@ -1,6 +1,6 @@
 ---
 - name: Create VagabondShaman user
-  hosts: your_target_host  # Replace 'your_target_host' with the actual target host or group of hosts
+  hosts: all  # Replace 'your_target_host' with the actual target host or group of hosts
 
   tasks:
     - name: Create VagabondShaman user
